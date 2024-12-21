@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin: 20px auto;
+            position: relative;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+        }
+        .header img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Image -->
+    <div class="header">
+        <img src="https://img.icons8.com/ios/452/computer.png" alt="Computer Icon">
+        <h1>Student Form</h1>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <form id="studentForm">
+            <input type="text" id="name" placeholder="Enter Name" required><br>
+            <input type="text" id="phone" placeholder="Enter Phone Number" required><br>
+            <input type="text" id="college" placeholder="Enter College Name" required><br>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function submitForm() {
+            // Get values from form inputs
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const college = document.getElementById('college').value;
+
+            // Check if all fields are filled
+            if (name && phone && college) {
+                // Store the data (in this case, just show it in an alert)
+                alert("Form Submitted Successfully! \nName: " + name + "\nPhone: " + phone + "\nCollege: " + college);
+                
+                // Optionally, you can clear the form after submission
+                document.getElementById('studentForm').reset();
+            } else {
+                // Show an alert if any field is missing
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+
+</body>
+</html>
